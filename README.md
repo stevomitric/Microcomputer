@@ -7,6 +7,8 @@ The simulated computer consists of 3 main units:
 - Memory
 - Interrupts
 
+![](https://raw.githubusercontent.com/stevomitric/Microcomputer/main/docs/sample1.png)
+
 ### CPU
 Central processing unit (CPU) is a RISC processor that has 19 instructions total. It is the single most important part of the Microprocessor and it's role is to execute instructions and handle user or system generated interrupts. It consists of 4 blocks which represent phases of instruction execution:
 - FETCH
@@ -22,7 +24,7 @@ Central processing unit (CPU) is a RISC processor that has 19 instructions total
 
 **INTR** checks for a pending interrupt. If an interrupt is present, CPU will switch to executing the interrupt by changing it's PC (Program Counter register) accordingly.
 
-![](https://raw.githubusercontent.com/stevomitric/Microcomputer/main/docs/sample1.png)
+![](https://raw.githubusercontent.com/stevomitric/Microcomputer/main/docs/sample2.png)
 
 ### Memory
 
