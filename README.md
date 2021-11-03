@@ -27,9 +27,28 @@ Central processing unit (CPU) is a RISC processor that has 19 instructions total
 ![](https://raw.githubusercontent.com/stevomitric/Microcomputer/main/docs/sample2.png)
 
 ### Memory
+Memory used in this project is of 128 KB size, with 2 B as smallest adresabile unit. Size of adress and data bus is 16 bit.
+
+To simulate real-world memory responses, a random delay is added to each memory request. This delay can be anywhere from 0-15 ticks.
+
+![](https://raw.githubusercontent.com/stevomitric/Microcomputer/main/docs/sample3.png)
 
 ### Bus
+Bus is a component responsible for connecting every module and allowing them to communicate. CPU and Memory are connected via 3 bus lines:
+- Address bus (ABUS)
+- Data bus (DBUS)
+- Control bus (CBUS)
+
+Communication between these two modules looks like this (reading data):
+1. CPU puts an address from which its requests data on ABUS
+2. CPU activates RD signal on CBUS
+3. Memory fetches the requested data and puts it on DBUS
+4. Memory activates FC signal on CBUS
+5. CPU takes the data from DBUS and disables RD signal
 
 ### Interrupts
+Interrupt mechanizam allows for preemptive workflow. After each instruction is executed, CPU checks if interrupt has happend and if so, jumps to specific interrupt function. If jump occured, CPU also saves its context first, which consists of AX (Acumulator), PC (Program counter) and PSW (Program status word) registers, on stack.
+
+To simulate interrupts happening from end-users, 8 buttons are added to interrupt-UI. All interrupts are masked and higher number interrupt has higher priority. 
 
 ## Assember
